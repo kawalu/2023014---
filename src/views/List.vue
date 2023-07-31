@@ -1,19 +1,12 @@
 <template>
-  <v-container>
+  <v-container style="color: #fff;">
     <v-row>
       <v-col cols="12">
         <h1>事項</h1>
       </v-col>
       <v-col cols="12">
-        <v-text-field
-          v-model="newItem"
-          label="新增事項"
-          append-icon="mdi-plus"
-          @keydown.enter="onInputSubmit"
-          @click:append="onInputSubmit"
-          :rules="[rules.required, rules.length]"
-          ref="newItemInput"
-        >
+        <v-text-field v-model="newItem" label="新增事項" append-icon="mdi-plus" @keydown.enter="onInputSubmit"
+          @click:append="onInputSubmit" :rules="[rules.required, rules.length]" ref="newItemInput">
         </v-text-field>
         <v-table>
           <thead>
@@ -25,14 +18,8 @@
           <tbody>
             <tr v-for="(item, i) in items" :key="item.id">
               <td>
-                <v-text-field
-                  v-model="item.model"
-                  :rules="[rules.required, rules.length]"
-                  v-show="item.edit"
-                  autofocus
-                  ref="editItemInput"
-                  @keydown.enter="onEditInputSubmit(item.id, i)"
-                ></v-text-field>
+                <v-text-field v-model="item.model" :rules="[rules.required, rules.length]" v-show="item.edit" autofocus
+                  ref="editItemInput" @keydown.enter="onEditInputSubmit(item.id, i)"></v-text-field>
                 <span v-show="!item.edit">
                   {{ item.name }}
                 </span>
@@ -69,12 +56,7 @@
             <tr v-for="item in finishedItems" :key="item.id">
               <td>{{ item.name }}</td>
               <td>
-                <v-btn
-                  icon="mdi-delete"
-                  color="red"
-                  variant="text"
-                  @click="delFinishedItem(item.id)"
-                ></v-btn>
+                <v-btn icon="mdi-delete" color="red" variant="text" @click="delFinishedItem(item.id)"></v-btn>
               </td>
             </tr>
             <tr v-if="finishedItems.length === 0">

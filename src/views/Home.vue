@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <v-row class="text-center ">
-      <v-col class="text123" cols="12">
-        <h1>{{ currentText }}</h1>
+    <v-row class="text-center " style="color: #fff;">
+      <v-col class="text123 " cols="12" style="color: #fff;">
+        <h1 >{{ currentText }}</h1>
         <h1>{{ currentTime }}</h1>
       </v-col>
       <v-col cols="12">

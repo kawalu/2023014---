@@ -41,7 +41,7 @@
       </v-col>
     </v-row>
   </v-container>
-  <img class="img123 text-center" src="../assets/004.png" />
+  <img class="img123" src="../assets/004.png" />
 </template>
 
 <script setup>
